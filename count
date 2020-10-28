@@ -15,5 +15,18 @@ from 테이블명
 where 1=1
 order by ~ asc, ~ desc
 
+(4)중복제거1
+select coumt(distinct 컬렴명)
+from table 
+where 컬렴 조건
 
+(4)중복제거2
+select count(*)
+from(
+	select 컬렴
+	from 테이블명
+	where 컬렴명 조건
+	group by 컬렴명
+
+)서브쿼리 별칭
 
