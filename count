@@ -1,0 +1,19 @@
+데이터 갯수 가져오기 :: coumt 함수
+- 테이블에 존재하는 데이터 갯수를 가져오고 싶을 떄.
+
+(1) 전체 column
+select count(*)
+from 테이블명
+
+(2) 특정 column
+select count(컬럼명)
+from 테이블명
+
+(3) 별칭써서
+select count(컬럼명) as 별칭
+from 테이블명
+where 1=1
+order by ~ asc, ~ desc
+
+
+
