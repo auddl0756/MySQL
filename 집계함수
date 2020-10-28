@@ -1,32 +1,42 @@
-데이터 갯수 가져오기 :: coumt 함수
-- 테이블에 존재하는 데이터 갯수를 가져오고 싶을 떄.
+1. sum
 
-(1) 전체 column
-select count(*)
-from 테이블명
+select sum(컬럼)
+from 테이블
 
-(2) 특정 column
-select count(컬럼명)
-from 테이블명
+2. max
 
-(3) 별칭써서
-select count(컬럼명) as 별칭
-from 테이블명
-where 1=1
-order by ~ asc, ~ desc
+1) 
+select max(컬럼)
+from 테이블
 
-(4)중복제거1
-select coumt(distinct 컬렴명)
-from table 
-where 컬렴 조건
+2)
+select 컬럼
+from 테이블
+order by 컬럼 desc
+limit 1
 
-(4)중복제거2
-select count(*)
-from(
-	select 컬렴
-	from 테이블명
-	where 컬렴명 조건
-	group by 컬렴명
 
-)서브쿼리 별칭
+3. min
+
+select min(컬럼)
+from 테이블
+
+
+4. group by와 함께  사용
+::집계함수의 결과를 특정 컬럼을 기준으로 묶어서 출력해주는 쿼리.
+
+ex) 도시별 인구 합계 출력
+select 도시명,sum(인구)
+from 테이블
+group by 도시명
+
+
+5. group by && having과 함께 사용
+::group by 쿼리 결과에 대한 조건문 검사.
+
+ex) group by로 구한 도시별 인구 합계 중 그 합계가 10만이 넘느 도시와 합계를 출력
+select 도시명,sum(인구)
+from 테이블
+group by 도시명
+having sum(인구)>10만
 
