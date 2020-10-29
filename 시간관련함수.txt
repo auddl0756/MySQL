@@ -1,0 +1,39 @@
+year(date)
+
+년도를 리턴한다.(1000 ~ 9999)
+
+mysql> select year('98-02-03');
+
+-> 1998
+
+
+hour(time)
+
+시간을 알려준다.(0 ~ 23)
+
+mysql> select hour('10:05:03');
+
+-> 10
+
+ 
+
+minute(time)
+
+분을 알려준다(0 ~ 59)
+
+mysql> select minute('98-02-03 10:05:03');
+
+-> 5
+
+
+second(time)
+
+초를 알려준다(0 ~ 59)
+
+mysql> select second('10:05:03');
+
+-> 3
+
+
+
+#출처: https://jang8584.tistory.com/7 [개발자의 길]
