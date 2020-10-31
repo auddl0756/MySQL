@@ -1,45 +1,37 @@
-year(date)
+<datetime에서 date로 형변환>
+SELECT ANIMAL_ID,name,date_format(datetime,"%Y-%m-%d") as 날짜
+# %y는 연도에서 뒤에 두 자리만.
+# %M은 달을 문자열로
+# %D는 day에 'th'처럼 몇번째인지도 붙여서 출력
+from animal_ins
+order  by animal_id
 
-년도를 리턴한다.(1000 ~ 9999)
 
-mysql> select year('98-02-03');
+============================================
+mysql> select year('98-02-03');	#연도를 리턴한다.(1000 ~ 9999)
 
 -> 1998
 
 
-hour(time)
-
-시간을 알려준다.(0 ~ 23)
-
-mysql> select hour('10:05:03');
+mysql> select hour('10:05:03');	#시간을 알려준다.(0 ~ 23)
 
 -> 10
 
- 
 
-minute(time)
-
-분을 알려준다(0 ~ 59)
-
-mysql> select minute('98-02-03 10:05:03');
+mysql> select minute('98-02-03 10:05:03'); #분을 알려준다(0 ~ 59)
 
 -> 5
 
 
-second(time)
-
-초를 알려준다(0 ~ 59)
-
-mysql> select second('10:05:03');
+mysql> select second('10:05:03'); #초를 알려준다(0 ~ 59)
 
 -> 3
 
 
-
 #출처: https://jang8584.tistory.com/7 [개발자의 길]
-
 
 ======================================================
 현재 날짜를 보려면
 select curdate() => 현재 년월일 출력
 select now()	 => 현재 년월일 시간분초까지 출력
+
