@@ -1,0 +1,12 @@
+#join table1 and table1
+
+우유와 요거트가 담긴 장바구니
+https://programmers.co.kr/learn/courses/30/lessons/62284
+
+==================================================
+(example)
+select A.cart_id
+from (select cart_id from cart_products where name="milk") as A
+join (select cart_id from cart_products where name="yogurt") as B
+on A.cart_id=B.cart_id
+order by A.cart_id
